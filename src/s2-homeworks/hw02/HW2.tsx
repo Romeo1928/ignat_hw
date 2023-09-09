@@ -49,7 +49,7 @@ export const filterAffairs = (affairs: AffairType[], filter: FilterType): Affair
 
     // 2-й способ
     // if (filter === 'all') return affairs
-    // else return affairs.filter((p) => p.priority === filter)
+    // else return affairs.filter((el) => el.priority === filter)
 }
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
     // const removeAffair  = affairs.filter((el)=> el._id !== _id)
