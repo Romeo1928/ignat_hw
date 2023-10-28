@@ -11,7 +11,13 @@ import s from './HW7.module.css'
 * 4 - сделать стили в соответствии с дизайном
 * */
 
-const arr = [
+
+export type ArrType = {
+    id: number
+    value: string
+}
+
+const arr: ArrType[] = [
     { id: 1, value: 'x' },
     { id: 2, value: 'y' },
     { id: 3, value: 'z' },
