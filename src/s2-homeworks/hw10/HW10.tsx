@@ -14,35 +14,41 @@ import {Loader} from './Loader'
 * */
 
 const HW10 = () => {
-    // useSelector, useDispatch // пишет студент
-    const isLoading = false
+	// useSelector, useDispatch // пишет студент
 
-    const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
-        // dispatch
+	const isLoading = useSelector<AppStoreType>((state) => state.loading.isLoading)
+	const dispatch = useDispatch();
 
-        // setTimeout
-    }
+	const setLoading = () => { // показать крутилку на 1,5 секунд
 
-    return (
-        <div id={'hw10'}>
-            <div className={s2.hwTitle}>Homework #10</div>
+		dispatch(loadingAC(true));
 
-            <div className={s2.hw}>
-                {isLoading ? (
-                    <div id={'hw10-loading'}>
-                        <Loader/>
-                    </div>
-                ) : (
-                    <SuperButton
-                        id={'hw10-button-start-loading'}
-                        onClick={setLoading}
-                    >
-                        Set loading...
-                    </SuperButton>
-                )}
-            </div>
-        </div>
-    )
+		setTimeout(() => {
+			dispatch(loadingAC(false));
+		}, 1500);
+	}
+	// {console.log(isLoading)}
+
+	return (
+		<div id={'hw10'}>
+			<div className={s2.hwTitle}>Homework #10</div>
+
+			<div className={s2.hw}>
+				{isLoading ? (
+					<div id={'hw10-loading'}>
+						<Loader/>
+					</div>
+				) : (
+					<SuperButton
+						id={'hw10-button-start-loading'}
+						onClick={setLoading}
+					>
+						Set loading...
+					</SuperButton>
+				)}
+			</div>
+		</div>
+	)
 }
 
 export default HW10

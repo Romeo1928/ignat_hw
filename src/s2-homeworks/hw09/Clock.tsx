@@ -35,10 +35,12 @@ function Clock() {
 
 
 	const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
+		// setShow(prev => !prev)
 		setShow(true)
 
 	}
 	const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
+		// setShow(prev => !prev)
 		setShow(false)
 	}
 
@@ -50,7 +52,7 @@ function Clock() {
 	// 1-й способ без дублирования .toString().padStart(2, '0')
 	const stringTime = `${formatWithZero(date.getHours())}:${formatWithZero(date.getMinutes())}:${formatWithZero(date.getSeconds())}` ||
 		<br/>
-	const stringDate = `${formatWithZero(date.getDate())}:${formatWithZero(date.getMonth())}:${date.getFullYear()}` ||
+	const stringDate = `${formatWithZero(date.getDate())}:${formatWithZero(date.getMonth() + 1)}:${date.getFullYear()}` ||
 		<br/>
 
 	// 2-й способ
